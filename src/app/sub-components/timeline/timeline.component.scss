@@ -1,0 +1,63 @@
+@import "../../../assets/styles/colors";
+
+.timeline-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.timeline-arrow {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 20px;
+  flex: 0 0 30px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  display: block;
+}
+
+.text-container {
+  flex: 1;
+  width: auto;
+  font-family: Tahoma;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.url-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  p {
+    margin-left: 10px;
+    text-decoration: underline;
+    color: $color_blue_windows;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline-arrow {
+    display: none;
+  }
+}

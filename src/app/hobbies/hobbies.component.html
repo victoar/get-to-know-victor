@@ -1,0 +1,16 @@
+<div class="main-content">
+  <div class="window-toolbar">
+    <app-window-toolbar [selectedTab]="'hobbies'"></app-window-toolbar>
+  </div>
+
+  <div class="window-content">
+    <div *ngFor="let hobbiesObject of data" class="folder-container">
+      <app-hobbies-folder
+        [folderName]="hobbiesObject.title"
+        [imgList]="hobbiesObject.img_list"
+        [description]="hobbiesObject.description"
+      ></app-hobbies-folder>
+    </div>
+
+  </div>
+</div>

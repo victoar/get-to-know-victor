@@ -1,0 +1,17 @@
+<div class="hobbies-folder-container" (mouseenter)="showTooltip()" (mouseleave)="hideTooltip()">
+  <img class="folder-background" src="assets/images/big-folder-icon.png" alt="bit-folder">
+
+  <div class="img-row-container">
+    <img [src]="'assets/images/hobbies/' + imgList[0]" alt="first-img">
+    <img [src]="'assets/images/hobbies/' + imgList[1]" alt="second-img">
+  </div>
+
+  <div class="img-row-container">
+    <img [src]="'assets/images/hobbies/' + imgList[2]" alt="first-img">
+    <img [src]="'assets/images/hobbies/' + imgList[3]" alt="second-img">
+  </div>
+
+  <div class="tooltip" [ngClass]="{'visible': tooltipVisible}">{{description}}</div>
+</div>
+
+<p class="folder-name">{{folderName}}</p>

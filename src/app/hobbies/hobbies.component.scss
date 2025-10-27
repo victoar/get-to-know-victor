@@ -1,0 +1,30 @@
+@import "../../assets/styles/colors";
+
+.window-content {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.folder-container {
+  width: 180px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .window-content {
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 50px;
+    align-items: center;
+  }
+}

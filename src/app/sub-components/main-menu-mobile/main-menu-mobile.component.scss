@@ -1,0 +1,72 @@
+@import "../../../assets/styles/colors";
+
+.main-menu-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(360deg, $color_dark_blue_windows, $color_blue_windows); /* Gradient background */
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 1px 3px rgba(0, 0, 0, 0.3); /* Inner and outer shadow */
+  display: flex;
+  z-index: 10;
+}
+
+.main-tab {
+  background: linear-gradient(300deg, #2C7A3D, #5AC54F); /* Gradient background */
+  flex: 0 0 150px;
+  width: 15%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  p {
+    font-family: Tahoma;
+    font-size: 30px;
+    color: white;
+    margin-left: 10px;
+  }
+}
+
+.burger-menu {
+  position: relative;
+  background: $color_dark_blue_windows;
+  z-index: 10;
+  height: 0;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.burger-menu.visible {
+  height: 180px;
+}
+
+.folder-container {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+  }
+
+  p {
+    background: $color_dark_blue_windows;
+    color: white;
+    font-family: Tahoma;
+    font-size: 20px;
+    margin-left: 8px;
+  }
+}
