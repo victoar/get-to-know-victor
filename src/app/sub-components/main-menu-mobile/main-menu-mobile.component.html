@@ -1,0 +1,23 @@
+<div class="main-menu-container">
+  <div class="main-tab" (click)="openBurgerMenu()">
+    <img src="assets/images/windows-icon.png" alt="windows-icon">
+    <p>start</p>
+  </div>
+</div>
+
+<div class="burger-menu" [ngClass]="{'visible': isMenuExpanded}">
+  <div class="folder-container" (click)="folderClicked('home')">
+    <img src="assets/images/home-main.png" alt="home-main">
+    <p>Home</p>
+  </div>
+
+  <div class="folder-container" (click)="folderClicked('personal-info')">
+    <img src="assets/images/education-main.png" alt="education-main">
+    <p>Personal Information</p>
+  </div>
+
+  <div class="folder-container" (click)="folderClicked('hobbies')">
+    <img src="assets/images/hobbies-main.png" alt="hobbies-main">
+    <p>Hobbies</p>
+  </div>
+</div>

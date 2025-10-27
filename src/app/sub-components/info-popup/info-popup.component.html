@@ -1,0 +1,23 @@
+<!--<h1 mat-dialog-title>Info</h1>-->
+<!--<div mat-dialog-content>-->
+<!--  <p>{{ data.message }}</p>-->
+<!--</div>-->
+<!--<div mat-dialog-actions>-->
+<!--  <button mat-button [mat-dialog-close]="'close'">Close</button>-->
+<!--</div>-->
+<div class="custom-windows-info-popup">
+  <div class="popup-toolbar">
+    <div class="window-close">
+      <img (click)="closeDialog()" src="assets/images/close-window-icon.png" alt="close-icon">
+    </div>
+  </div>
+
+  <div class="popup-content">
+    <img src="assets/images/info-icon.png" alt="info-icon">
+    <p>{{data.message}}</p>
+  </div>
+
+  <div class="popup-button">
+    <button (click)="closeDialog()">{{data.button}}</button>
+  </div>
+</div>

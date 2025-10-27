@@ -1,0 +1,21 @@
+<div class="timeline-container">
+  <div class="timeline-arrow"></div>
+
+  <div class="text-container">
+    <h1>
+      {{title}}
+    </h1>
+
+    <h2>
+      {{subTitle}}
+    </h2>
+
+    <p [innerHTML]="description"></p>
+
+    <div *ngIf="url?.length > 0" class="url-container">
+      <img src="assets/images/url-icon.png" alt="url-icon">
+      <p (click)="openNewTabWithUrl(url)">Github Repository</p>
+    </div>
+
+  </div>
+</div>

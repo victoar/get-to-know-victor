@@ -1,0 +1,78 @@
+@import "../../../assets/styles/colors";
+
+
+.popup-toolbar {
+  width: auto;
+  height: 30px;
+  background: $color_blue_windows;
+  background: linear-gradient(180deg, $color_dark_blue_windows, $color_blue_windows); /* Gradient background */
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 1px 3px rgba(0, 0, 0, 0.3); /* Inner and outer shadow */
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.window-close {
+  position: relative;
+  display: flex;
+  height: 100%;
+  float: right;
+  align-items: center;
+
+  img {
+    width: 25px;
+  }
+}
+
+.popup-content{
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  p {
+    font-family: Tahoma;
+    color: black;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
+
+.popup-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
+  button {
+    width: 50px;
+    padding: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 3px rgba(0, 0, 0, 1.3); /* Inner and outer shadow */
+    font-family: Tahoma;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:active {
+    animation: pressing 0.1s ease-out;
+    outline: none;
+  }
+
+  @keyframes pressing {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+  }
+}
