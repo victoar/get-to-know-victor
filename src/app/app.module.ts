@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {SubComponentsModule} from './sub-components/sub-components.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InfoPopupComponent} from './sub-components/info-popup/info-popup.component';
+import {DataControllerService} from './services/data-controller.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +15,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    SubComponentsModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    DataControllerService
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [InfoPopupComponent]
 })
 export class AppModule { }
