@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {state, style, trigger, transition, animate, AUTO_STYLE} from '@angular/animations';
-import {MatDialog} from '@angular/material';
 import {InfoPopupComponent} from '../sub-components/info-popup/info-popup.component';
 import {HttpClient} from '@angular/common/http';
 import {DataControllerService} from '../services/data-controller.service';
+import {MatDialog} from '@angular/material/dialog';
 
 const DEFAULT_DURATION = 500;
 

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import {MainMenuComponent} from './main-menu/main-menu.component';
 import { MainMenuMobileComponent } from './main-menu-mobile/main-menu-mobile.component';
 import { WindowToolbarComponent } from './window-toolbar/window-toolbar.component';
-import {MatDialogModule} from '@angular/material';
 import {InfoPopupComponent} from './info-popup/info-popup.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HobbiesFolderComponent } from './hobbies-folder/hobbies-folder.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
