@@ -10,20 +10,19 @@ import {DataControllerService} from './services/data-controller.service';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    SubComponentsModule,
-    HttpClientModule
-  ],
-  providers: [
-    DataControllerService
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [InfoPopupComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        SubComponentsModule,
+        HttpClientModule
+    ],
+    providers: [
+        DataControllerService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
