@@ -1,21 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {DataControllerService} from '../services/data-controller.service';
+import {WindowToolbarComponent} from '../sub-components/window-toolbar/window-toolbar.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [WindowToolbarComponent],
 })
 export class HomeComponent implements OnInit {
   data: any;
   title: string = '';
   paragraphs: string[] = [];
 
-  constructor(
-    private http: HttpClient,
-    private dataController: DataControllerService
-  ) {}
+  constructor(private dataController: DataControllerService) {}
 
   ngOnInit() {
     this.fetchData();

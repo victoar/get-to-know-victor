@@ -1,9 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-hobbies-folder',
   templateUrl: './hobbies-folder.component.html',
-  styleUrls: ['./hobbies-folder.component.scss']
+  styleUrls: ['./hobbies-folder.component.scss'],
+  standalone: true,
+  imports: [NgClass],
 })
 export class HobbiesFolderComponent implements OnInit {
   @Input() folderName: string;
@@ -12,10 +15,9 @@ export class HobbiesFolderComponent implements OnInit {
 
   tooltipVisible = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   showTooltip() {
     this.tooltipVisible = true;

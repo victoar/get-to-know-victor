@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {state, style, trigger, transition, animate, AUTO_STYLE} from '@angular/animations';
 import {InfoPopupComponent} from '../sub-components/info-popup/info-popup.component';
-import { HttpClient } from '@angular/common/http';
 import {DataControllerService} from '../services/data-controller.service';
 import {MatDialog} from '@angular/material/dialog';
+import {WindowToolbarComponent} from '../sub-components/window-toolbar/window-toolbar.component';
+import {TimelineComponent} from '../sub-components/timeline/timeline.component';
 
 const DEFAULT_DURATION = 500;
 
@@ -13,12 +14,14 @@ const DEFAULT_DURATION = 500;
   styleUrls: ['./personal-info.component.scss'],
   animations: [
     trigger('collapse', [
-      state('false', style({ height: AUTO_STYLE, visibility: AUTO_STYLE })),
-      state('true', style({ height: '0', visibility: 'hidden' })),
+      state('false', style({height: AUTO_STYLE, visibility: AUTO_STYLE})),
+      state('true', style({height: '0', visibility: 'hidden'})),
       transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in')),
-      transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out'))
-    ])
-  ]
+      transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out')),
+    ]),
+  ],
+  standalone: true,
+  imports: [WindowToolbarComponent, TimelineComponent],
 })
 export class PersonalInfoComponent implements OnInit {
   educationData: any;
@@ -28,16 +31,17 @@ export class PersonalInfoComponent implements OnInit {
   showDescriptionForWorkExperience: boolean = false;
   showDescriptionForProjects: boolean = false;
 
-  constructor(private dialog: MatDialog,
-              private dataController: DataControllerService,
-              private http: HttpClient) { }
+  constructor(
+    private dialog: MatDialog,
+    private dataController: DataControllerService
+  ) {}
 
   ngOnInit() {
     this.fetchData();
   }
 
   fetchData() {
-    this.dataController.getPersonalInfoData().subscribe(res => {
+    this.dataController.getPersonalInfoData().subscribe((res) => {
       this.educationData = res.education;
       this.workExperienceData = res.work_experience;
       this.projectsData = res.projects;
@@ -46,7 +50,7 @@ export class PersonalInfoComponent implements OnInit {
 
   generateListHTML(items: string[]): string {
     let html = '<ul>';
-    items.forEach(item => {
+    items.forEach((item) => {
       html += `<li>${item}</li>`;
     });
     html += '</ul>';
@@ -75,7 +79,7 @@ export class PersonalInfoComponent implements OnInit {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    this.openInfoDialog("My CV is being downloaded!", "OK");
+    this.openInfoDialog('My CV is being downloaded!', 'OK');
   }
 
   openInfoDialog(message: string, button): void {
@@ -83,8 +87,8 @@ export class PersonalInfoComponent implements OnInit {
       width: '300px',
       data: {
         message: message,
-        button: button
-      }
+        button: button,
+      },
     });
   }
 }

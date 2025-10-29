@@ -4,14 +4,14 @@
   </div>
 
   <div class="window-content">
-
     <div class="tab-info" (click)="toggleDescriptionForEducation()">
-      <img src="assets/images/folder.png" alt="folder-icon">
+      <img src="assets/images/folder.png" alt="folder-icon" />
       <p>Education</p>
     </div>
 
     <div class="tab-description" [@collapse]="!showDescriptionForEducation">
-      <app-timeline *ngFor="let educationObject of educationData"
+      <app-timeline
+        *ngFor="let educationObject of educationData"
         [title]="educationObject.title"
         [subTitle]="educationObject.subtitle"
         [description]="generateListHTML(educationObject.description)"
@@ -20,12 +20,13 @@
     </div>
 
     <div class="tab-info" (click)="toggleDescriptionForWorkExperience()">
-      <img src="assets/images/folder.png" alt="folder-icon">
+      <img src="assets/images/folder.png" alt="folder-icon" />
       <p>Work Experience</p>
     </div>
 
     <div class="tab-description" [@collapse]="!showDescriptionForWorkExperience">
-      <app-timeline *ngFor="let workExperienceObject of workExperienceData"
+      <app-timeline
+        *ngFor="let workExperienceObject of workExperienceData"
         [title]="workExperienceObject.title"
         [subTitle]="workExperienceObject.subtitle"
         [description]="generateListHTML(workExperienceObject.description)"
@@ -34,22 +35,23 @@
     </div>
 
     <div class="tab-info" (click)="toggleDescriptionForProjects()">
-      <img src="assets/images/folder.png" alt="folder-icon">
+      <img src="assets/images/folder.png" alt="folder-icon" />
       <p>Projects</p>
     </div>
 
     <div class="tab-description" [@collapse]="!showDescriptionForProjects">
-      <app-timeline *ngFor="let projectObject of projectsData"
+      <app-timeline
+        *ngFor="let projectObject of projectsData"
         [title]="projectObject.title"
         [subTitle]="projectObject.subtitle"
         [description]="generateListHTML(projectObject.description)"
         [url]="projectObject.url"
-        >
+      >
       </app-timeline>
     </div>
 
     <div class="tab-info" (click)="downloadCV()">
-      <img src="assets/images/resume-folder.png" alt="folder-icon">
+      <img src="assets/images/resume-folder.png" alt="folder-icon" />
       <p>Resume</p>
     </div>
   </div>
