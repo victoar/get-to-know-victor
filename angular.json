@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "victor-cv:build"
+            "buildTarget": "victor-cv:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "victor-cv:build:production"
+              "buildTarget": "victor-cv:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "victor-cv:build"
+            "buildTarget": "victor-cv:build"
           }
         },
         "test": {
